@@ -138,6 +138,8 @@
 		=> pour créer un index dans mysql, on utilise le nom de l'indexe
 		
 		ex : KEY nom_de_l'indexe (champ_1,champ2,...)
+		ou encore 
+		INDEXE UNIQUE nom_index (nom,prenom)
 		
 30 - Comment supprimer des données d'une table MySQL ?
 
@@ -162,31 +164,27 @@
 		
 34 - Qu'est-ce que BLOB dans MySQL ?
 
-		=> Blob est un type de données pouvant stocker les fichiers par acronyme Binary light objet 
+		=> Blob est un type de données binaire pouvant stocker les fichiers par acronyme Binary light objet 
 		
 35 - Que sont les « vues » de MySQL ?
 		
-		=> ce sont des tables virtuel créer a partir des tables physiques pour simplifier l'utilisation des requetes. cette dernière crée une tables virtuel stockées qu'on peut y accédés plusieurs 
+		=> ce sont des tables virtuel contenant des lignes et des colones créer a partir des tables physiques pour simplifier l'utilisation des requetes. cette dernière crée une tables virtuel stockées qu'on peut y accédés plusieurs fois
 
 36 - Comment créer et exécuter des vues dans MySQL ?
 
-		=> pour créer un view on utilise : CREATE VIEWS table_concat AS SELECT id,nom,prenom,prix FROM nom_tables; 
+		=> Pour créer un view on utilise : CREATE VIEWS table_concat AS SELECT id,nom,prenom,prix FROM nom_tables; 
 		
 37 - Que sont les déclencheurs MySQL ?
 
-		=> 
+		=> ce sont des commandes SQL définie par Admin et qui qont automatiquement invoqués lors d'un action.
 		
 38 - Combien de déclencheurs sont possibles dans MySQL ?
 
-		=> 
-		
-39 - Combien de déclencheurs sont possibles dans MySQL ?
-
-		=> plusieurs déclencheur a savoir : After INSERT, AFTER DELETE, AFTER UPDATE
+		=> 6 nous avons befor insert, after insert, befor delete, after delete, befor update, after update
 		
 40 - Qu'est-ce que le serveur MySQL ?
 
-		=> c'est une système de gestion de base de données rélationnelle.
+		=> c'est une système de gestion de base de données rélationnelle open source.
 		
 41 - Quels sont les clients et utilitaires MySQL ?
 
@@ -221,7 +219,7 @@
 		
 48 - Que fait "i_am_a_dummy flag" dans MySQL ?
 
-		=> 
+		=> Oblige le moteur MySQL à refuser les commandes UPDATE et DELETE où la clause WHERE n'est pas présente
 		
 		
 49 - Pourquoi utilisons-nous le serveur de base de données MySQL ?
