@@ -1,0 +1,334 @@
+1 - Qu'est-ce que MySQL ?
+
+		=> mysql est un SGBDR;
+
+2 - Quel est le numéro de port par défaut de MySQL ?
+
+		=> 3306
+
+3 - La requête MySQL est-elle sensible à la casse ?
+
+		=> non elle n'est pas  senssible a la case. mais la Bonne pratique est de mettre en majuscule les commande SQL
+
+4 - Répertorier certains types de données disponibles pour la colonne ?
+
+		=> nous avons les types : int, varchar, double, date, datetime,blob,double,short,float. les grand types sont :Numérique, Date, 				Chaine de Caractère, Spatial, JSON.
+		
+5 - Quelle est la différence entre FLOAT et DOUBLE ?
+		
+		=> Float est un type de donnée qui prend les nombre decimal avec une paramèttre elle stock jusqu'a 4 octets tandis que double 			prend les nombre décimals et fonctionne sans les paramttre. il stocke jusqu'à 8 octets.
+		
+6 -  quelle est la différence entre CHAR et VARCHAR ?
+
+		=> La différence entre CHAR et VARCHAR est la manière dont leurs contenu sont stockés en mémoire. 
+		
+		char est de longueur fixe par contre varchar est de longeur variable; un char est rapide que une varchar car elle est léger, un 			char stocke jusqu'à 255 caractère et un varchar jusqu'à 65535
+		
+		
+		
+7 - Quelle est la différence entre la base de données et la table ?
+
+		=> Une base de données est une ensemble des tables structuré et organiser contenant des données. Une table est est un élement de 				la base de données structurer en ligne et colone contenant des données.
+		
+8 - Quelle est la différence entre les opérateurs LIKE et REGEXP ?
+
+		=> Like est une fonction SQL permettant de faire des recherche sur des données tandisque l'opérateur REGEXP est utilisé  pour des expressions régulières.
+		
+9 - Comment créer une table avec MySQL ?
+
+		=> Pour créer une table avec Mysql nous avons plusieurs option avec l'interface graphique notamment mysql-Workbench; phpmyadmin; 			 ou en ligne de cmd en tapant : 
+		CREATE TABLE nom_de_table (champ1 type_champ1, champ2 type_champ2, champN type_champN, PRIMARY KEY(champ);
+		
+11 - Comment mettre à jour la table dans MySQL ?
+		
+		=> pour mettre a jours une table dans MySQL on utilise la fonction UPDATE exemple mettre a jours table1
+		UPDATE table1 SET champ1=valeur1 WHERE critère;
+		
+12 - Comment supprimer une ligne d'une table MySQL ?
+		
+		=> pour supprimer une ligne dans une table on utilise la fontion DELETE de SQL : 
+		
+		DELETE FROM table WHERE critère; 
+		
+13- Quelle est la différence entre les commandes DELETE TABLE et TRUNCATE TABLE dans MySQL ?
+	
+		=> la commande DELETE table permet de supprimer les données d'une table tout en les déplaçons dans la corbeille  par contre TRUNCATE TABLE permet de vidé les donnees contenu dans une table sans de manière definitif.
+		
+14 - Comment pouvez-vous changer le nom d'une table existante à l'aide de l'instruction SQL ?
+
+		=> on utilise la commande : RENAME TABLE table1 TO table11; ou encore ALTER TABLE RENAME TABLE idi to ida
+		
+		
+15 - Comment vérifier la version MySQL ?
+
+		=> pour verifier on utilise la commande : MySQL --version ou mysql -V dans un terminal. Ou encore sous mysql en utilisant la 				commande : VERSION();
+		 
+16 - Comment ajouter des colonnes dans MySQL ?
+
+		=> pour ajouter une colonne dans Mysql on peut le faire lors de la création d'une table ou en modifiant une table existant 
+		
+		ALTER table nom_table ADD nom_colonne description_du_colone;
+		
+17 - Comment changer le nom de la colonne dans MySQL ?
+
+		=> ALTER table nom_table CHANGE nom_col new_nom_col description;
+		
+		example ALTER table etudiant CHANGE name Nom varchar(30) NOT NULL;
+		
+18 - Comment définir la colonne d'incrémentation automatique dans MySQL ?
+
+		=> pour définir la colonne d'incrementation automatique on utilise le mot clé AUTO INCREMENT dans la description de la colonne;
+		
+19 - Comment trouver le deuxième salaire le plus élevé dans MySQL ?
+		
+		=> pour selectionner une salaire le plus élévé on utilise le mot clé MAX(colonne) par contre pour trouver le deuxième salaire le plus élévé est : 
+		Select distinct (salaire) from employer order by desc limit 1,1;
+		
+		ex: SELECT MAX(salaire) from employe; // pour le plus frans salaire
+		
+20 - Comment modifier le nom d'une colonne dans MySQL ? remplacer par Tuple.
+		
+		=> => ALTER table nom_table CHANGE nom_col new_nom_col  ancien_description_colone;
+		
+21 - Comment enregistrer des images dans MySQL ?
+		
+		=> pour enregistrer une image dans mysql nous avons deux manière: 
+		
+		1- enregister juste l'adresse de l'image dans une colonne de type VARCHAR
+		2- convertir l'image en binaire et l'enregister dans une colone de type blob 
+		
+		
+		
+22 - Qu'entendez-vous par % et _ dans l'instruction LIKE ?
+		
+		=> le % avec LIKE permet de spécifier la méthode de recherche dans une base de données en envoyant 0,1 ou plusieurs caractère inconnu par contre le _ est utiliser pour remplacer uniquement un caractère inconnu.
+		
+23 - Comment créer un nouvel utilisateur dans MySQL ?
+
+		=> on utilise la commande  CREATE USER 'nom_user'@'localhost' IDENTIFIED BY 'mot_de_pass'
+		
+24 - Comment vérifier les UTILISATEURS dans MySQL ?
+	
+		=> pour vérifier les utilisateurs dans MySQL on utilise la commande suivant : 
+		
+		SELECT USER, authentication_string,plugin,host FROM mysql.user;
+		
+		ou encore plus simple SELECT * from mysql.user;
+		
+25 - Quelle est la différence entre la clé primaire et la clé candidate ?
+
+		=> une clé primaire existe en un seule exemplaire dans une table définissant l'unicité de cette table par contre une table peut avoir plusieurs clé candidate. aussi une clé primaire peut être une clé canditate mais une clé candidate n'est pas forcement une clé primaire.
+		une clé primaire ne pourra pas ếtre null, tandis que une clé candidate peut être null et n'admet pas de doublant;	 
+		
+26 - Comment ajouter des clés étrangères dans MySQL ?
+		
+		=> on ajoute les clés étrangères avec le mot clé foreign key
+		
+		
+27 - Qu'est-ce qu'une jointure ? Expliquez les différents types de jointures MySQL.
+
+		=> une jointure 
+
+28 - Comment joindre deux tables dans MySQL ?
+
+29 - Comment créer un index dans MySQL ?
+
+		=> pour créer un index dans mysql, on utilise le nom de l'indexe
+		
+		ex : KEY nom_de_l'indexe (champ_1,champ2,...)
+		
+30 - Comment supprimer des données d'une table MySQL ?
+
+		=> pour supprimer les données d'une table mysql on Utilise la fonction : Delete ou TRUNCATE
+		
+		Ex : DELETE from table WHERE condition;
+		
+		Ex : Truncate table;
+		 
+3 1- Qu'est-ce que MySQL Workbench ?
+
+		=> c'est un logiciel de modélisation de création des shémas et d'administration de base de données mysql;
+		
+		
+32 - Quelle est la liste des types de données de chaîne dans MySQL ?
+
+		=> les types de données de type chaine sont : CHAR, VARCHAR, TEXT, 
+		
+33 - Quels sont les types de données temporelles dans MySQL ?
+
+		=> nous avons DATE, DATETIME, TIME, YEARS, TIMESTAMP
+		
+34 - Qu'est-ce que BLOB dans MySQL ?
+
+		=> Blob est un type de données pouvant stocker les fichiers par acronyme Binary light objet 
+		
+35 - Que sont les « vues » de MySQL ?
+		
+		=> ce sont des tables virtuel créer a partir des tables physiques pour simplifier l'utilisation des requetes. cette dernière crée une tables virtuel stockées qu'on peut y accédés plusieurs 
+
+36 - Comment créer et exécuter des vues dans MySQL ?
+
+		=> pour créer un view on utilise : CREATE VIEWS table_concat AS SELECT id,nom,prenom,prix FROM nom_tables; 
+		
+37 - Que sont les déclencheurs MySQL ?
+
+		=> 
+		
+38 - Combien de déclencheurs sont possibles dans MySQL ?
+
+		=> 
+		
+39 - Combien de déclencheurs sont possibles dans MySQL ?
+
+		=> plusieurs déclencheur a savoir : After INSERT, AFTER DELETE, AFTER UPDATE
+		
+40 - Qu'est-ce que le serveur MySQL ?
+
+		=> c'est une système de gestion de base de données rélationnelle.
+		
+41 - Quels sont les clients et utilitaires MySQL ?
+
+		=> les clients mysql sont : mysql, mysqlcheck
+		=> les utilisaire sont : myisqmpack, mysqladmin;mysqlbinlog,mysqlhotcopy perror.
+		
+42 - Quels sont les types de relations utilisées dans MySQL ?
+	
+		=> nous avons les rélation : 
+			- 1.1
+			- 1.n
+			- n.n
+43 - Que sont les moteurs de stockage de transactions dans MySQL, en lister quelques-uns ?
+
+		=> InnoDB & MyIsam pour voir la liste exhaustive en applique : show engines;
+		
+44 - Dans quelle langue MySQL a-t-il été écrit ?
+
+		=> elle est écrit en C et C++ 
+
+45 - Quelles sont les spécifications techniques de MySQL ?
+
+		=> verifier le PDF
+		
+46 - Quelle est la différence entre MySQL et SQL ?
+
+		=> Mysql est un SGBD par contre SQL est un language de traitement et d'intérrogation des données; Structured Query Language
+		
+47 - Quelle est la différence entre la base de données et la table ?
+		
+		=> une base de données est un ensemble de tables structuré par contre une table est un element de la base de données constitué des ligne et de conlone destinés a contenir des données 
+		
+48 - Que fait "i_am_a_dummy flag" dans MySQL ?
+
+		=> 
+		
+		
+49 - Pourquoi utilisons-nous le serveur de base de données MySQL ?
+			
+		=> open source, liberté de création de plusieurs base de données, et est adapter pour la création des mini projets de site web
+		
+50 - Comment changer le mot de passe MySQL ?
+
+		=> ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'TopSecret_1998@';
+		
+51 - Comment importer une base de données dans MySQL ?
+		
+		=> mysql -u root -p nom_db < script.sql;
+		
+		=> pour exporter ou sauvégarder une base de données on fait : 
+		
+		mysqldump -u root -p nom_database > nom_fichier_sauvegarde.sql;
+		
+52 - Comment joindre trois tables dans MySQL ?
+53 - Qu'est-ce qu'une procédure stockée dans MySQL ?
+
+		=> permettent d'automatiser les des actions complexes
+54 - Comment créer une procédure stockée dans MySQL ?
+55 - Comment exécuter une procédure stockée dans MySQL ?
+56 - Qu'est-ce que la table de tas  en MySQL?
+57 - Écrire une requête pour afficher la date et l'heure actuelles ?
+
+		=> SELECT NOW();
+		
+58 - Écrivez une requête pour compter le nombre de lignes d'une table dans MySQL.
+		
+		=> COUNT(nom_ligne);
+		
+59 - Quelle est l'utilisation des ENUM dans MySQL ?
+		
+		=> colone ENUM(valeur) // c'est un type de données permettant de définir les données autorisés dans une colone.
+		
+		=> ALTER TABLE bdr MODIFY note_eleve ENUM("IDI","FF","SS")
+		
+60 - Quelle est la fonction de mysqldump ?
+
+		=> mysqldump est une fonction permettant de faire la sauvegarde et la restauration des données dans une base de données
+		
+61 - Qu'est-ce que le répertoire de données MySQL ?
+
+		=> par défaut sous ubuntu Mysql utilise le repertoir tmp;
+		
+62 - Listez 3 fonctions intégrées, définissez-les, utilisez-les dans la demande ?
+
+		=> COUNT , MAX, MIN
+		
+63 - qu'est-ce qu'une agrégation dans MySQL ?
+
+		=> une 
+		
+64 - Pourquoi utilisons-nous des fonctions d'agrégation ?
+
+		=> on utilise les fonctions d'agrégation pour regrouper les ligne et sortir une seule resultat
+		
+65 - Comment déterminez-vous l'emplacement du répertoire de données MySQL ?
+
+		=>
+		
+66 - Que sont les tables fédérées ?
+
+		=>
+		
+67 - Lister 3 pilotes dans MySQL ?
+
+		=>
+		
+68 - Qu'est-ce qu'un curseur ?
+
+		=>
+		
+69 - Quelle est la différence entre une table Heap et une table Temporaire ?
+
+		=>
+
+/******************* fin my sql ************************/
+
+70 - Expliquez l'origine de PostgreSQL.
+71 - Qu'est-ce que la base de données PostgreSQL ?
+72 - Expliquer certaines fonctionnalités de PostgreSQL ?
+73 - Quels sont les différents types de données dans PostgreSQL ?
+74 - Quel est le numéro de port par défaut de PostgreSQL ?
+75 - Comment créer une table avec PostgreSQL ?
+76 - Comment mettre à jour la table dans PostgreSQL ?
+77 - Comment supprimer une colonne d'une table PostgreSQL ?
+78 - Qu'est-ce qu'une table double dans PostgreSQL ? A quoi ça sert ?
+79 - En quoi PostgreSQL est-il différent de SQL Server ?
+80 - Comment sélectionner les 10 premiers enregistrements dans PostgreSQL ?
+81 - Quels sont les index dans PostgreSQL ?
+82 - Qu'est-ce qu'une requête parallèle dans PostgreSQL ?
+83 - Que sont les vues dans PostgreSQL ?
+84 - Expliquer les fonctions dans PostgreSQL
+85 - Expliquez l'héritage PostgreSQL. Comment PostgreSQL implémente l'héritage de table ? A quoi ça sert ?
+86 - Expliquer le partitionnement de table dans PostgreSQL.
+87 - Quelle est la taille maximale d'une table dans PostgreSQL ?
+88 - Expliquer les index dans PostgreSQL.
+89 - Expliquer à propos de la journalisation en écriture anticipée dans PostgreSQL ?
+90 - Comment créer un utilisateur Postgresql ?
+91 - Comment changer le mot de passe d'un utilisateur Postgresql ?
+92 - Comment effectuer des requêtes à l'aide de plusieurs bases de données dans PostgreSQL ?
+93 - Est-il possible de créer un cluster de serveurs PostgreSQL à stockage partagé ?
+94 - Quand devons-nous utiliser PostgreSQL ?
+95 - Qu'est-ce que le contrôle multi-versions de PostgreSQL ?
+96 - Que sont les jetons dans PostgreSQL ?
+97 - Qu'est-ce que Ctid dans PostgreSQL ?
+98 - Qu'est-ce qu'une séquence dans PostgreSQL ?
+99 - Comment pouvons-nous stocker des données binaires dans PostgreSQL ?
+100 - PostgreSQL est-il une bonne option pour le big data ?
