@@ -131,6 +131,8 @@
 
 28 - Comment joindre deux tables dans MySQL ?
 
+		=>
+
 29 - Comment créer un index dans MySQL ?
 
 		=> pour créer un index dans mysql, on utilise le nom de l'indexe
@@ -239,12 +241,25 @@
 		mysqldump -u root -p nom_database > nom_fichier_sauvegarde.sql;
 		
 52 - Comment joindre trois tables dans MySQL ?
+
+		=>
+
 53 - Qu'est-ce qu'une procédure stockée dans MySQL ?
 
 		=> permettent d'automatiser les des actions complexes
+
 54 - Comment créer une procédure stockée dans MySQL ?
+
+		=>
+
 55 - Comment exécuter une procédure stockée dans MySQL ?
+
+		=>
+
 56 - Qu'est-ce que la table de tas  en MySQL?
+
+		=>
+		
 57 - Écrire une requête pour afficher la date et l'heure actuelles ?
 
 		=> SELECT NOW();
