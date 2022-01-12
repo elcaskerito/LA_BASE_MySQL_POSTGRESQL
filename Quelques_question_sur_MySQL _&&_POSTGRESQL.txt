@@ -219,7 +219,7 @@
 		
 48 - Que fait "i_am_a_dummy flag" dans MySQL ?
 
-		=> Oblige le moteur MySQL à refuser les commandes UPDATE et DELETE où la clause WHERE n'est pas présente
+		=> elle Oblige le moteur MySQL à refuser les commandes UPDATE et DELETE où la clause WHERE n'est pas présente
 		
 		
 49 - Pourquoi utilisons-nous le serveur de base de données MySQL ?
@@ -240,7 +240,7 @@
 		
 52 - Comment joindre trois tables dans MySQL ?
 
-		=>
+		=>  select tab1.*,tab2.*,tab3.* from tab1 INNER JOIN tab2 ON tab1.id=tab2.id INNER JOIN tab3 ON tab3.id=tab1.id;
 
 53 - Qu'est-ce qu'une procédure stockée dans MySQL ?
 
@@ -248,15 +248,15 @@
 
 54 - Comment créer une procédure stockée dans MySQL ?
 
-		=>
+		=> select tab1.*,tab2.*,tab3.* from tab1 INNER JOIN tab2 ON tab1.id=tab2.id INNER JOIN tab3 ON tab3.id=tab1.id;
 
 55 - Comment exécuter une procédure stockée dans MySQL ?
 
-		=>
+		=> stored procedure est un ensemble d'instruction pré-compiler stocké dans une BD et exécuté sur demande par le SGBD;
 
 56 - Qu'est-ce que la table de tas  en MySQL?
 
-		=>
+		=> ce sont des tables présent dans la mémoire. ils sont aussi appélé table heap;
 		
 57 - Écrire une requête pour afficher la date et l'heure actuelles ?
 
@@ -286,56 +286,115 @@
 		
 63 - qu'est-ce qu'une agrégation dans MySQL ?
 
-		=> une 
+		=> c'est une catégorie de fonction MySQL qui permet de filtrer une colone et d'envoyer une valeurs unique.
 		
 64 - Pourquoi utilisons-nous des fonctions d'agrégation ?
 
-		=> on utilise les fonctions d'agrégation pour regrouper les ligne et sortir une seule resultat
+		=> on utilise les fonctions d'agrégation pour regrouper les ligne et sortir une seule resultat exemple la fonction MIN(colone) qui renvoi le minimum des éléments d'une colone
 		
 65 - Comment déterminez-vous l'emplacement du répertoire de données MySQL ?
 
-		=>
+		=> on determine dans la variable datadir qui se trouve dans l'emplacement dans /etc/mysql/my.conf 
 		
 66 - Que sont les tables fédérées ?
 
-		=>
+		=> créer pour afficher les données au format appropriée
 		
 67 - Lister 3 pilotes dans MySQL ?
 
-		=>
+		=> ADO.net; Mysql connector, mysql JDBC
 		
 68 - Qu'est-ce qu'un curseur ?
 
-		=>
+		=> c'est un objet utiliser pour localiser les enregistrement d'une base de données
 		
 69 - Quelle est la différence entre une table Heap et une table Temporaire ?
 
-		=>
+		=> une table heap concerve les données en memoire tandis que table temporaire concerve les données temporaire et seront supprimer a la fin de la session de l'utilisateur 
 
 /******************* fin my sql ************************/
 
 70 - Expliquez l'origine de PostgreSQL.
+
+	 => c'est un SGBDR OPEN SOURCE dévélopper par michael stonebraker après après le developpement de ingres il recommence une autre version de ingrès en ajoutant en intégrant sql pour ce faire il a nomée le logiciel postgres (post ingrès ) qui plus tard est dévnenu postgreSQL. il est très stable apparu récement.
+
 71 - Qu'est-ce que la base de données PostgreSQL ?
+
+	=> la base de données PostgresSQL est la base de données par défaut créer lors de l'installation de PostgreSQL et est utiliser par le user admin postgres.
+
 72 - Expliquer certaines fonctionnalités de PostgreSQL ?
+
+nous avons deux invite de commade dans postgresql : invite de commande du system qu'on n'accede avec su postgres et invide de commande du SGBD qui se connecte directement sur une base de données qu'on accede avec psql
+
+	=> createdb nom de DB a partir de compe utilisateur : pour créer une base de données
+		dropdb nomDB supprime une DB a partir de compte utilisateur POstgres
+		- \h a partir de l'interface psql permet de consulter l'aide de psql sur les commande a utiliser regrouper par catégorie
+		- \q pour quitter
+		- la commande help pour obtenir la liste des commande 
+		- \? : propose tous les option de cmd
+		- CREATE ROLE username superuser login; : permet de créer un role pour l'utilisateur username avec le priviliège su et login  
+		- gestion de l'auto complétion a partir de CLI par la touche TAB après le nom de la commande 
+
 73 - Quels sont les différents types de données dans PostgreSQL ?
+
+	=> nous avons beaucoup de type a savoir : int, char, character, text, date,timestamp,bit,box,serial,...
+
 74 - Quel est le numéro de port par défaut de PostgreSQL ?
+
+	=> 5432
+
 75 - Comment créer une table avec PostgreSQL ?
+
+	=> CREATE TABLE levels ( 
+						 id  serial PRIMARY KEY not null,
+						  name VARCHAR(100),
+						  description TEXT
+						);
+
 76 - Comment mettre à jour la table dans PostgreSQL ?
+
+		=> UPDATE TABLE levels SET name="mamiya",descrition="mutshibichi" where id=2;
+
 77 - Comment supprimer une colonne d'une table PostgreSQL ?
+
+		=> pour suprime une colone dans postgresql on utilise ALTER TABLE nom table DROP idi;
+
 78 - Qu'est-ce qu'une table double dans PostgreSQL ? A quoi ça sert ?
+
+		=> 
+
 79 - En quoi PostgreSQL est-il différent de SQL Server ?
+
+		=> select * from table order by id_table ASC limit 0.10
+
 80 - Comment sélectionner les 10 premiers enregistrements dans PostgreSQL ?
+
+		=> SELECT * from table ORDER BY ASC limit 0,10;
+
 81 - Quels sont les index dans PostgreSQL ?
+		
+		=> B-tree, Hash, GiST, SP-GiST, GIN et BRIN.
+
 82 - Qu'est-ce qu'une requête parallèle dans PostgreSQL ?
+		
+		=> une requete parallele ce sont des requette envoyer simultanement utilisant plus CPU
+
 83 - Que sont les vues dans PostgreSQL ?
+		=>
+
 84 - Expliquer les fonctions dans PostgreSQL
+
 85 - Expliquez l'héritage PostgreSQL. Comment PostgreSQL implémente l'héritage de table ? A quoi ça sert ?
+
 86 - Expliquer le partitionnement de table dans PostgreSQL.
 87 - Quelle est la taille maximale d'une table dans PostgreSQL ?
 88 - Expliquer les index dans PostgreSQL.
 89 - Expliquer à propos de la journalisation en écriture anticipée dans PostgreSQL ?
 90 - Comment créer un utilisateur Postgresql ?
 91 - Comment changer le mot de passe d'un utilisateur Postgresql ?
+
+=> ALTER USER · username · WITH · '<new_password>' ;
+
 92 - Comment effectuer des requêtes à l'aide de plusieurs bases de données dans PostgreSQL ?
 93 - Est-il possible de créer un cluster de serveurs PostgreSQL à stockage partagé ?
 94 - Quand devons-nous utiliser PostgreSQL ?
@@ -343,5 +402,9 @@
 96 - Que sont les jetons dans PostgreSQL ?
 97 - Qu'est-ce que Ctid dans PostgreSQL ?
 98 - Qu'est-ce qu'une séquence dans PostgreSQL ?
+
+		
 99 - Comment pouvons-nous stocker des données binaires dans PostgreSQL ?
+	
+	=> on le stock dans les type bytea
 100 - PostgreSQL est-il une bonne option pour le big data ?
